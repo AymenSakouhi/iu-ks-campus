@@ -461,6 +461,168 @@ document.querySelectorAll(".discountPrice").forEach(item => {
     item.innerHTML = '0000';
 })
 
+NanBadHonnef = [
+    {
+      name: "M.A. International Management - 60",
+      tillIntake: "Jul 22",
+    },
+    {
+      name: "M.Eng. Engineering Management - 60",
+      tillIntake: "Apr 22",
+    },
+    {
+      name: "M.Sc. Computer Science - 120",
+      tillIntake: "Apr 22",
+    },
+    {
+      name: "M.A. International Management - 120",
+      tillIntake: "Jul 22",
+    },
+    {
+      name: "M.A. International Management - Specialisation Big Data Management - 120",
+      tillIntake: "Jul 22",
+    },
+    {
+      name: "M.A. International Management - Specialisation Engineering Management - 120",
+      tillIntake: "Jul 22",
+    },
+    {
+      name: "M.A. International Management - Specialisation IT Management - 120",
+      tillIntake: "Jul 22",
+    },
+    {
+      name: "M.A. International Management - Specialisation International Marketing - 120",
+      tillIntake: "Jul 22",
+    },
+    {
+      name: "M.A. International Management - Specialisation Finance & Accounting - 120",
+      tillIntake: "Jul 22",
+    },
+    {
+      name: "M.A. International Management - Specialisation AI & Robotics - 120",
+      tillIntake: "Jul 22",
+    },
+    {
+      name: "MBA One-Year - 60",
+      tillIntake: "Apr 22",
+    },
+    {
+      name: "MBA - Master of Business Administration - 90",
+      tillIntake: "Jul 22",
+    },
+    {
+      name: "MBA - Specialisation Big Data Management - 90",
+      tillIntake: "Jul 22",
+    },
+    {
+      name: "MBA - Specialisation International Marketing - 90",
+      tillIntake: "Jul 22",
+    },
+    {
+      name: "MBA - Specialisation Finance & Accounting - 90",
+      tillIntake: "Jul 22",
+    },
+    {
+      name: "MBA - Specialisation Engineering Management - 90",
+      tillIntake: "Jul 22",
+    },
+    {
+      name: "MBA - Specialisation IT Management - 90",
+      tillIntake: "Jul 22",
+    },
+    {
+      name: "MBA - Specialisation Health Care Management - 90",
+      tillIntake: "Jul 22",
+    },
+    {
+      name: "MBA - Specialisation Human Resource Management - 90",
+      tillIntake: "Jul 22",
+    },
+    {
+      name: "MBA - Specialisation Supply Chain Management - 90",
+      tillIntake: "Jul 22",
+    },
+    {
+      name: "MBA - Specialisation Innovation & Entrepreneurship - 90",
+      tillIntake: "Jul 22",
+    },
+    {
+      name: "MBA - Specialisation Artificial Intelligence - 90",
+      tillIntake: "Jul 22",
+    },
+    {
+      name: "MBA - Specialisation E-Sports Management - 90",
+      tillIntake: "Jul 22",
+    },
+    {
+      name: "MBA - Specialisation Salesforce - 90",
+      tillIntake: "Jul 22",
+    },
+    {
+      name: "M.A. Management - 60",
+      tillIntake: "Jul 22",
+    },
+    {
+      name: "M.A. Management - Specialisation Big Data Management - 60",
+      tillIntake: "Jul 22",
+    },
+    {
+      name: "M.A. Management - Specialisation Engineering Management - 60",
+      tillIntake: "Jul 22",
+    },
+    {
+      name: "M.A. Management - Specialisation IT Management - 60",
+      tillIntake: "Jul 22",
+    },
+    {
+      name: "M.A. International Management - Specialisation Finance & Accounting - 120",
+      tillIntake: "Jul 22",
+    },
+    {
+      name: "M.A. Management - Specialisation International Marketing - 60",
+      tillIntake: "Jul 22",
+    },
+  ];
+  
+  function removeBadHonnefLocation() {
+    if (
+      mT.find(
+        ({ name, studyLocation }) =>
+          name === $("#studyProgram :selected").text() &&
+          studyLocation === "OnlyBerlin"
+      )
+    ) {
+      $("#badHonnefLocation").addClass("hide");
+    } else {
+      $("#badHonnefLocation").removeClass("hide");
+    }
+  }
+  
+  function removeBadHonnefBasedIntake(curIntake) {
+    let curIntakeIndex = 0;
+    let intakeIndex = 2;
+  
+    const isIndexOf = (element) => element === curIntake;
+    curIntakeIndex = allIntakes.findIndex(isIndexOf); //to find out what's the index of the curIntake in the allintakes array
+    //curIntakeIndex = allIntakes.findIndex(isIndexOf);
+    
+    NanBadHonnef.find( ({name, tillIntake}) => {
+      if (name === $("#studyProgram :selected").text())  {
+        const isIndexOfTillIntake = (element) => element === tillIntake.replace(/\s+/g,'').toLowerCase();
+        intakeIndex = allIntakes.findIndex(isIndexOfTillIntake)
+      }
+    })
+    if(curIntakeIndex > intakeIndex && NanBadHonnef.find( ({name}) => name === $("#studyProgram :selected").text())) {
+      $("#badHonnefLocation").addClass("hide");
+    } else {
+      $("#badHonnefLocation").removeClass("hide");
+    }
+  }
+  
+  // $("input[name='studyLocation']").change(
+  
+
+
 
 let mT = [
     {
@@ -1403,6 +1565,7 @@ function findOutAndChange(x, y) {
         /*for (let i = 0; i < D2.length; i++) {
             D2[i].value = $("#"+x).val();
         }*/
+        removeBadHonnefBasedIntake('jan22')
         checkIntakeStart()
     } else if(x === 'summerintake' || x === 'summerintake') {
         document.getElementsByClassName("intake")[0].value = "2022-04-01";
@@ -1410,6 +1573,7 @@ function findOutAndChange(x, y) {
         /*for (let i = 0; i < D2.length; i++) {
             D2[i].value = $("#"+x).val();
         }*/
+        removeBadHonnefBasedIntake('apr22')
         checkIntakeStart()
     } else if(x === 'summerintake' || x === 'summerintake2') {
         document.getElementsByClassName("intake")[0].value = "2022-06-01";
@@ -1417,6 +1581,7 @@ function findOutAndChange(x, y) {
         /*for (let i = 0; i < D2.length; i++) {
             D2[i].value = $("#"+x).val();
         }*/
+        removeBadHonnefBasedIntake('jul22')
         checkIntakeStart()
     } else if(x === 'winterintake3') {
         document.getElementsByClassName("intake")[0].value = "2022-10-01";
@@ -1424,6 +1589,7 @@ function findOutAndChange(x, y) {
         /*for (let i = 0; i < D2.length; i++) {
             D2[i].value = $("#"+x).val();
         }*/
+        removeBadHonnefBasedIntake('oct22')
         checkIntakeStart()
     }else if(x === 'summerintake3') {
         document.getElementsByClassName("intake")[0].value = "2023-04-01";
@@ -1431,6 +1597,7 @@ function findOutAndChange(x, y) {
         /*for (let i = 0; i < D2.length; i++) {
             D2[i].value = $("#"+x).val();
         }*/
+        removeBadHonnefBasedIntake('apr23')
         checkIntakeStart()
     }else if(x === 'winterintake4') {
         document.getElementsByClassName("intake")[0].value = "2022-10-01";
@@ -1438,6 +1605,7 @@ function findOutAndChange(x, y) {
         /*for (let i = 0; i < D2.length; i++) {
             D2[i].value = $("#"+x).val();
         }*/
+        removeBadHonnefBasedIntake('oct22')
         checkIntakeStart()
     }else if(x === 'winterintakejan23') {
         document.getElementsByClassName("intake")[0].value = "2023-01-01";
@@ -1445,6 +1613,7 @@ function findOutAndChange(x, y) {
         /*for (let i = 0; i < D2.length; i++) {
             D2[i].value = $("#"+x).val();
         }*/
+        removeBadHonnefBasedIntake('jan23')
         checkIntakeStart()
     }else if(x === 'summerintakejul23') {
         document.getElementsByClassName("intake")[0].value = "2023-06-01";
@@ -1452,6 +1621,7 @@ function findOutAndChange(x, y) {
         /*for (let i = 0; i < D2.length; i++) {
             D2[i].value = $("#"+x).val();
         }*/
+        removeBadHonnefBasedIntake('jul23')
         checkIntakeStart()
     }
 
