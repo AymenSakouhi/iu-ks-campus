@@ -464,7 +464,7 @@ document.querySelectorAll(".discountPrice").forEach(item => {
 NanBadHonnef = [
     {
       name: "M.A. International Management - 60",
-      tillIntake: "Jul 22",
+      tillIntake: "Jul 22, Oct 22, Jan 23, Apr 23",
     },
     {
       name: "M.Eng. Engineering Management - 60",
@@ -472,7 +472,7 @@ NanBadHonnef = [
     },
     {
       name: "M.Sc. Computer Science - 120",
-      tillIntake: "Apr 22",
+      tillIntake: "Oct 22, Jan 23, Oct 23",
     },
     {
       name: "M.A. International Management - 120",
@@ -629,7 +629,7 @@ let mT = [
         "name" : 'B.A. Business Administration - 180',
         "careId" : '10007953_FI',
         "careIdCs" : '10008367',
-        "intake" : "Apr 22, Jul 22, Oct 22"
+        "intake" : "Oct 22, Jan 23, Apr 23,  Jul 23"
     },
     {
         "name" : 'B.Sc. Data Science - 180',
@@ -836,7 +836,7 @@ let mT = [
         "name" : 'M.Sc. Computer Science - 120',
         "careId" : '10007941_FI',
         "careIdCs" : '10008373',
-        "intake" : "Oct 21, Apr 22, Oct 22, Apr 23, Oct 23",
+        "intake" : "Oct 22, Jan 23, Oct 23",
         "intake2" : "Apr 22, Oct 22, Apr 23, Oct 23"
 
     },
@@ -852,7 +852,7 @@ let mT = [
         "name" : 'B.Sc. Business & IT - 180',
         "careId" : '10008001_FI',
         "careIdCs" : '10008368',
-        "intake" : "Apr 22, Jul 22, Oct 22"
+        "intake" : "Oct 22, Jan 23, Apr 23,  Jul 23"
     },
     {
         "name" : 'B.Eng. Robotics - 180',
@@ -862,7 +862,7 @@ let mT = [
         "name" : 'B.Eng. Industrial Engineering & Management - 180',
         "careId" : '10008000_FI',
         "careIdCs" : '10008370',
-        "intake" : "Apr 22, Jul 22, Oct 22"
+        "intake" : "Oct 22, Jan 23, Apr 23,  Jul 23"
 
     },
     {
@@ -918,7 +918,7 @@ let mT = [
         "careId" : '10008044_FI',
         "st_careId" : '70',
         "careIdCs" : '10008376',
-        "intake" : "Apr 22, Jul 22, Oct 22"
+        "intake" : "Jul 22, Oct 22, Jan 23, Apr 23"
     },
     {
         "name" : 'M.A. International Management - 120',
