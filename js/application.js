@@ -842,7 +842,7 @@ let mT = [
     },
     {
         "name" : 'B.Sc. Applied Artificial Intelligence - 180',
-        "careId": "10008523",
+        "careId": "10008073_FI_AI",
         "careIdCs": "10008523_CS_AAI",
         "intake": "Oct 22, Oct 23",
     },
@@ -858,7 +858,7 @@ let mT = [
     },
     {
         "name" : 'B.Eng. Robotics - 180',
-        "careId": "10008527",
+        "careId": "10007964_FI",
         "careIdCs": "10008527_CS_ROB",
         "intake": "Oct 22, Jan 23, Apr 23, Jul 23"
     },
