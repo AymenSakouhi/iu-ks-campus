@@ -582,6 +582,14 @@ NanBadHonnef = [
       name: "M.A. Management - Specialisation International Marketing - 60",
       tillIntake: "Jul 22",
     },
+    {
+        name: "M.A. Marketing Management - 120 ECTS",
+        tillIntake: "Apr 22",
+    },
+    {
+        name: "M.A. Marketing Management - 60 ECTS",
+        tillIntake: "Apr 22",
+    },
   ];
   
   function removeBadHonnefLocation() {
@@ -848,7 +856,9 @@ let mT = [
     },
     {
         "name" : 'B.A. Entrepreneurship - 180',
-        "careId" : '10008062_FI'
+        "careId" : '10008062_FI',
+        "careIdCs": "10008526_CS_ENT",
+        "intake": "Oct 22",
     },
     {
         "name" : 'B.Sc. Business & IT - 180',
@@ -889,11 +899,17 @@ let mT = [
     },
     {
         "name" : 'M.A. Marketing Management - 60',
-        "careId" : '10007977_FI'
+        "careId" : '10007977_FI',
+        "careIdCs": "10008540_CS_MM",
+        "intake": "Oct 22",
+        "studyLocation": "OnlyBerlin"
     },
     {
         "name" : 'M.A. Marketing Management - 120',
-        "careId" : '10007976_FI'
+        "careId" : '10007976_FI',
+        "careIdCs": "10008539_CS_MM",
+        "intake": "Oct 22",
+        "studyLocation": "OnlyBerlin"
     },
     {
         "name" : 'M.A. Information Technology Management - 60',
@@ -1032,13 +1048,10 @@ let mT = [
 mtCheckOnline = [
     'B.Sc. Data Science - 180',
     'B.A. Digital Business - 180',
-    'B.A. Entrepreneurship - 180',
     'M.Sc. Data Science - 60',
     'M.Sc. Data Science - 120',
     'M.Sc. Artificial Intelligence - 60',
     'M.Sc. Artificial Intelligence - 120',
-    'M.A. Marketing Management - 60',
-    'M.A. Marketing Management - 120',
     'M.A. Management - Specialisation Leadership - 60',
     'M.A. Information Technology Management - 60',
     'M.A. Information Technology Management - 120',
