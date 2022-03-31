@@ -649,7 +649,10 @@ let mT = [
     },
     {
         "name" : 'M.Sc. Artificial Intelligence - 120',
-        "careId" : '10007857'
+        "careId" : '10007857',
+        "careIdCs" : "10008529_CS_AI",
+        "intake" : "Oct 22, Apr 23, Oct 23",
+        "studyLocation": "OnlyBerlin",
     },
     {
         "name" : 'M.Sc. Data Science - 60',
@@ -1051,7 +1054,6 @@ mtCheckOnline = [
     'M.Sc. Data Science - 60',
     'M.Sc. Data Science - 120',
     'M.Sc. Artificial Intelligence - 60',
-    'M.Sc. Artificial Intelligence - 120',
     'M.A. Management - Specialisation Leadership - 60',
     'M.A. Information Technology Management - 60',
     'M.A. Information Technology Management - 120',
