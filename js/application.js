@@ -575,7 +575,7 @@ NanBadHonnef = [
       tillIntake: "Jul 22",
     },
     {
-      name: "M.A. International Management - Specialisation Finance & Accounting - 120",
+      name: "M.A. Management - Specialisation Finance & Accounting - 60",
       tillIntake: "Jul 22",
     },
     {
@@ -583,12 +583,12 @@ NanBadHonnef = [
       tillIntake: "Jul 22",
     },
     {
-        name: "M.A. Marketing Management - 120 ECTS",
-        tillIntake: "Apr 22",
+      name: "M.A. Marketing Management - 120 ECTS",
+      tillIntake: "Apr 22",
     },
     {
-        name: "M.A. Marketing Management - 60 ECTS",
-        tillIntake: "Apr 22",
+      name: "M.A. Marketing Management - 60 ECTS",
+      tillIntake: "Apr 22",
     },
   ];
   
@@ -601,8 +601,6 @@ NanBadHonnef = [
       )
     ) {
       $("#badHonnefLocation").addClass("hide");
-    } else {
-      $("#badHonnefLocation").removeClass("hide");
     }
   }
   
@@ -625,7 +623,9 @@ NanBadHonnef = [
     } else {
       $("#badHonnefLocation").removeClass("hide");
     }
-  }
+  
+    removeBadHonnefLocation()
+}
   
   // $("input[name='studyLocation']").change(
   
@@ -1671,6 +1671,7 @@ function checkLocation() {
 
 
     if($('input[name="studyLocation"]:checked').val() === "Study on campus"){
+        
         $("#intakes").show()
         $("#site").show()
         $(".siteRow").show()
@@ -2422,7 +2423,6 @@ $("#studyOnCampus").click(function() {
         });
         locationSite = "4"
         $( "#berlin" ).trigger( "click" )
-
     },100)
 });
 
