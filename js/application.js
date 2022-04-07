@@ -601,8 +601,6 @@ NanBadHonnef = [
       )
     ) {
       $("#badHonnefLocation").addClass("hide");
-    } else {
-      $("#badHonnefLocation").removeClass("hide");
     }
   }
   
@@ -625,7 +623,9 @@ NanBadHonnef = [
     } else {
       $("#badHonnefLocation").removeClass("hide");
     }
-  }
+  
+    removeBadHonnefLocation()
+}
   
   // $("input[name='studyLocation']").change(
   
@@ -1585,7 +1585,6 @@ function findOutAndChange(x, y) {
             D2[i].value = $("#"+x).val();
         }*/
         removeBadHonnefBasedIntake('jan22')
-        removeBadHonnefLocation()
         checkIntakeStart()
     } else if(x === 'summerintake' || x === 'summerintake') {
         document.getElementsByClassName("intake")[0].value = "2022-04-01";
@@ -1594,7 +1593,6 @@ function findOutAndChange(x, y) {
             D2[i].value = $("#"+x).val();
         }*/
         removeBadHonnefBasedIntake('apr22')
-        removeBadHonnefLocation()
         checkIntakeStart()
     } else if(x === 'summerintake' || x === 'summerintake2') {
         document.getElementsByClassName("intake")[0].value = "2022-06-01";
@@ -1603,7 +1601,6 @@ function findOutAndChange(x, y) {
             D2[i].value = $("#"+x).val();
         }*/
         removeBadHonnefBasedIntake('jul22')
-        removeBadHonnefLocation()
         checkIntakeStart()
     } else if(x === 'winterintake3') {
         document.getElementsByClassName("intake")[0].value = "2022-10-01";
@@ -1612,7 +1609,6 @@ function findOutAndChange(x, y) {
             D2[i].value = $("#"+x).val();
         }*/
         removeBadHonnefBasedIntake('oct22')
-        removeBadHonnefLocation()
         checkIntakeStart()
     }else if(x === 'summerintake3') {
         document.getElementsByClassName("intake")[0].value = "2023-04-01";
@@ -1621,7 +1617,6 @@ function findOutAndChange(x, y) {
             D2[i].value = $("#"+x).val();
         }*/
         removeBadHonnefBasedIntake('apr23')
-        removeBadHonnefLocation()
         checkIntakeStart()
     }else if(x === 'winterintake4') {
         document.getElementsByClassName("intake")[0].value = "2022-10-01";
@@ -1630,7 +1625,6 @@ function findOutAndChange(x, y) {
             D2[i].value = $("#"+x).val();
         }*/
         removeBadHonnefBasedIntake('oct22')
-        removeBadHonnefLocation()
         checkIntakeStart()
     }else if(x === 'winterintakejan23') {
         document.getElementsByClassName("intake")[0].value = "2023-01-01";
@@ -1639,7 +1633,6 @@ function findOutAndChange(x, y) {
             D2[i].value = $("#"+x).val();
         }*/
         removeBadHonnefBasedIntake('jan23')
-        removeBadHonnefLocation()
         checkIntakeStart()
     }else if(x === 'summerintakejul23') {
         document.getElementsByClassName("intake")[0].value = "2023-06-01";
@@ -1648,7 +1641,6 @@ function findOutAndChange(x, y) {
             D2[i].value = $("#"+x).val();
         }*/
         removeBadHonnefBasedIntake('jul23')
-        removeBadHonnefLocation()
         checkIntakeStart()
     }
 
@@ -2430,7 +2422,7 @@ $("#studyOnCampus").click(function() {
             }
         });
         locationSite = "4"
-        $( "#berlin" ).trigger( "click" ) 
+        $( "#berlin" ).trigger( "click" )
     },100)
 });
 
