@@ -114,5 +114,3 @@ $( "#skip" ).click(function() {
     toAnotherPage();
 });
 
-$("#technicalMalfunctions").modal();
-
