@@ -780,7 +780,7 @@ function removeBadHonnefBasedIntake(curIntake) {
       careId: "10007941_FI",
       //"careIdCs" : '10007952'
       careIdCs: "10008373",
-      intake: "Oct 22, Jan 23, Oct 23",
+      intake: "Oct 22, Apr 23, Oct 23",
       intake2: "Apr 22, Oct 22, Apr 23, Oct 23",
       studyLocation: "OnlyBerlin"
     },
