@@ -324,7 +324,7 @@ $(document).ready(function () {
           },
           data: JSON.stringify({
             email: email, //"erickrichard56@gmail.com" for test MCFKENYA
-            unit: "fi",
+            unit: "cs",
           }),
           dataType: "json",
           success: function (data) {
@@ -734,419 +734,458 @@ function removeBadHonnefBasedIntake(curIntake) {
 
 // $("input[name='studyLocation']").change(
 
-let mT = [
-  {
-    name: "B.A. Business Administration - 180",
-    careId: "10007953_FI",
-    careIdCs: "10008367",
-    intake: "Oct 22, Jan 23, Apr 23,  Jul 23",
-  },
-  {
-    name: "B.Sc. Data Science - 180",
-    careId: "10007851",
-  },
-  {
-    name: "M.Sc. Artificial Intelligence - 60",
-    careId: "10007858",
-  },
-  {
-    name: "M.Sc. Artificial Intelligence - 120",
-    careId: "10007857",
-    careIdCs: "10008529_CS_AI",
-    intake: "Oct 22, Apr 23, Oct 23",
-    studyLocation: "OnlyBerlin",
-  },
-  {
-    name: "M.Sc. Data Science - 60",
-    careId: "10007855",
-  },
-  {
-    name: "M.Sc. Data Science - 120",
-    careId: "10007854",
-  },
-  {
-    name: "M.Sc. Cyber Security - 120",
-    careId: "10008014_FI",
-    careIdCs: "10008533_CS",
-    intake: "Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
-  },
-  {
-    name: "M.Sc. Data Management - 60",
-    careId: "10008099_FI_DM",
-  },
-  {
-    name: "M.Sc. Data Management - 120",
-    careId: "10008098_FI_DM",
-  },
-  {
-    name: "M.Sc. Business Intelligence - 60",
-    careId: "10008093_FI_BI",
-  },
-  {
-    name: "M.Sc. Business Intelligence - 120",
-    careId: "10008092_FI_BI",
-  },
-  {
-    name: "M.Sc. Finance, Accounting & Taxation - 120",
-    careId: "10008096_FI_FAT",
-  },
-  {
-    name: "M.A. Management - 60",
-    careId: "10007958_FI",
-    careIdCs: "10008377",
-    intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22",
-  },
-  {
-    name: "M.A. Management - Specialisation Finance & Accounting - 60",
-    careId: "10007958_FI_FA",
-    careIdCs: "10008377_FA",
-    intake: "Jan 22, Apr 22, Jul 22, Oct 22",
-  },
-  {
-    name: "M.A. Management - Specialisation Leadership - 60",
-    careId: "10007958_FI_L",
-  },
-  {
-    name: "M.A. International Healthcare Management - 60",
-    careId: "10008178_FI_HCM",
-  },
-  {
-    name: "M.A. International Healthcare Management - 120",
-    careId: "10008179_FI_HCM",
-  },
-  {
-    name: "M.A. Human Resource Management - 60",
-    careId: "10008137_FI_HRM",
-  },
-  {
-    name: "M.A. Human Resource Management - 120",
-    careId: "10008136_FI_HRM",
-  },
-  {
-    name: "M.A. Innovation & Entrepreneurship - 120",
-    careId: "10008132_FI_IE",
-  },
-  {
-    name: "B.A. Digital Business - 180",
-    careId: "10008068_FI",
-  },
-  {
-    name: "B.A. International Healthcare Management - 180",
-    careId: "10008144_FI_HCM",
-  },
-  {
-    name: "M.A. Management - Specialisation Engineering Management - 60",
-    careId: "10007958_FI_EM",
-    careIdCs: "10008377_EM",
-    intake: "Jan 22, Apr 22, Jul 22, Oct 22",
-  },
-  {
-    name: "M.A. Management - Specialisation Big Data Management - 60",
-    careId: "10007958_FI_BDM",
-    careIdCs: "10008377_BDM",
-    intake: "Jan 22, Apr 22, Jul 22, Oct 22",
-    intake2: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22",
-  },
-  {
-    name: "M.A. Management - Specialisation IT Management - 60",
-    careId: "10007958_FI_ITM",
-    careIdCs: "10008377_ITM",
-    intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22",
-    intake2: "Jan 22, Apr 22, Jul 22, Oct 22",
-  },
-  {
-    name: "M.A. Management - Specialisation International Marketing - 60",
-    careId: "10007958_FI_IM",
-    careIdCs: "10008377_IM",
-    intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22",
-    intake2: "Jan 22, Apr 22, Jul 22, Oct 22",
-  },
-  {
-    name: "B.Sc. Cyber Security - 180",
-    careId: "10007999_FI",
-    careIdCs: "10008533_CS",
-    intake: "Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
-  },
-  {
-    name: "MBA One-Year - 60",
-    careId: "120_FI",
-    //"careIdCs" : '120'
-    careIdCs: "10008378",
-    intake: "Oct 21, Apr 22, Oct 22, Jan 23, Apr 23, Oct 23",
-  },
-  {
-    name: "MBA - Master of Business Administration - 90",
-    careId: "121_FI",
-    //"careIdCs" : '121'
-    careIdCs: "10008379",
-    intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22, Jan 23, Apr 23, Jul 23",
-  },
-  {
-    name: "MBA - Specialisation Big Data Management - 90",
-    careId: "121_FI_BDM",
-    //"careIdCs" : '121_BDM'
-    careIdCs: "10008379_BDM",
-    intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22, Jan 23, Apr 23, Jul 23",
-  },
-  {
-    name: "MBA - Specialisation International Marketing - 90",
-    careId: "121_FI_IM",
-    //"careIdCs" : '121_IM'
-    careIdCs: "10008379_IM",
-    intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22, Jan 23, Apr 23, Jul 23",
-  },
-  {
-    name: "MBA - Specialisation Finance & Accounting - 90",
-    careId: "121_FI_FA",
-    //"careIdCs" : '121_FA'
-    careIdCs: "10008379_FA",
-    intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22, Jan 23, Apr 23, Jul 23",
-  },
-  {
-    name: "MBA - Specialisation Engineering Management - 90",
-    careId: "121_FI_EM",
-    //"careIdCs" : '121_EM'
-    careIdCs: "10008379_EM",
-    intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22, Jan 23, Apr 23, Jul 23",
-  },
-  {
-    name: "MBA - Specialisation IT Management - 90",
-    careId: "121_FI_ITM",
-    //"careIdCs" : '121_ITM'
-    careIdCs: "10008379_ITM",
-    intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22, Jan 23, Apr 23, Jul 23",
-  },
-  {
-    name: "MBA - Specialisation Health Care Management - 90",
-    careId: "121_FI_HCM",
-    careIdCs: "10008379_HCM",
-    intake: "Apr 22, Jul 22, Oct 22, Jan 23, Apr 23",
-  },
-  {
-    name: "MBA - Specialisation Human Resource Management - 90",
-    careId: "121_FI_HRM",
-    careIdCs: "10008379_HRM",
-    intake: "Apr 22, Jul 22, Oct 22, Jan 23, Apr 23",
-  },
-  {
-    name: "MBA - Specialisation Supply Chain Management - 90",
-    careId: "121_FI_SCM",
-    careIdCs: "10008379_SCM",
-    intake: "Apr 22, Jul 22, Oct 22, Jan 23, Apr 23",
-  },
-  {
-    name: "MBA - Specialisation Innovation & Entrepreneurship - 90",
-    careId: "121_FI_IE",
-    careIdCs: "10008379_IE",
-    intake: "Apr 22, Jul 22, Oct 22, Jan 23, Apr 23",
-  },
-  {
-    name: "MBA - Specialisation Artificial Intelligence - 90",
-    careId: "121_FI_AI",
-    careIdCs: "10008379_AI",
-    intake: "Apr 22, Jul 22, Oct 22, Jan 23, Apr 23",
-  },
-  {
-    name: "MBA - Specialisation E-Sports Management - 90",
-    careId: "121_FI_ESM",
-    careIdCs: "10008379_ESM",
-    intake: "Apr 22, Jul 22, Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
-  },
-  {
-    name: "M.Sc. Computer Science - 120",
-    careId: "10007941_FI",
-    careIdCs: "10008373",
-    intake: "Oct 22, Jan 23, Oct 23",
-    intake2: "Apr 22, Oct 22, Apr 23, Oct 23",
-  },
-  {
-    name: "B.Sc. Applied Artificial Intelligence - 180",
-    careId: "10008073_FI_AI",
-    careIdCs: "10008523_CS_AAI",
-    intake: "Oct 22, Oct 23",
-  },
-  {
-    name: "B.A. Entrepreneurship - 180",
-    careId: "10008062_FI",
-    careIdCs: "10008526_CS_ENT",
-    intake: "Oct 22",
-  },
-  {
-    name: "B.Sc. Business & IT - 180",
-    careId: "10008001_FI",
-    careIdCs: "10008368",
-    intake: "Oct 22, Jan 23, Apr 23,  Jul 23",
-  },
-  {
-    name: "B.Eng. Robotics - 180",
-    careId: "10007964_FI",
-    careIdCs: "10008527_CS_ROB",
-    intake: "Oct 22, Jan 23, Apr 23, Jul 23",
-  },
-  {
-    name: "B.Eng. Industrial Engineering & Management - 180",
-    careId: "10008000_FI",
-    careIdCs: "10008370",
-    intake: "Oct 22, Jan 23, Apr 23,  Jul 23",
-  },
-  {
-    name: "B.A. International Management - 180",
-    careId: "10008002_FI",
-    careIdCs: "10008371",
-    intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22",
-  },
-  {
-    name: "B.A. Aviation Management - 180",
-    careId: "10008295_FI_AM",
-    careIdCs: "10008472",
-    intake: "Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
-  },
-  {
-    name: "B.A. Hospitality Management - 180",
-    careId: "10008294_FI_HM",
-    careIdCs: "10008477",
-    intake: "Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
-  },
-  {
-    name: "M.A. Marketing Management - 60",
-    careId: "10007977_FI",
-    careIdCs: "10008540_CS_MM",
-    intake: "Oct 22",
-    studyLocation: "OnlyBerlin",
-  },
-  {
-    name: "M.A. Marketing Management - 120",
-    careId: "10007976_FI",
-    careIdCs: "10008539_CS_MM",
-    intake: "Oct 22",
-    studyLocation: "OnlyBerlin",
-  },
-  {
-    name: "M.A. Information Technology Management - 60",
-    careId: "10008090_FI_ITM",
-  },
-  {
-    name: "M.A. Information Technology Management - 120",
-    careId: "10008089_FI_ITM",
-  },
-  {
-    name: "M.A. Digital Innovation & Intrapreneurship - 60",
-    careId: "10008133_FI_DII",
-  },
-  {
-    name: "B.Sc. Computer Science - 180",
-    careId: "10007944_FI",
-    careIdCs: "10008369",
-    intake: "Oct 21, Apr 22, Oct 22",
-  },
-  {
-    name: "B.Sc. Software Development - 180",
-    careId: "10008074_FI_SD",
-  },
-  {
-    name: "M.A. International Management - 60",
-    careId: "10008044_FI",
-    st_careId: "70",
-    careIdCs: "10008376",
-    intake: "Jul 22, Oct 22, Jan 23, Apr 23",
-  },
-  {
-    name: "M.A. International Management - 120",
-    careId: "10008045_FI",
-    st_careId: "70",
-    careIdCs: "10008375",
-    intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22",
-  },
-  {
-    name: "M.A. International Management - Specialisation AI & Robotics - 120",
-    careId: "10008045_FI_AR",
-    st_careId: "70",
-    careIdCs: "10008375_AR",
-    intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22",
-  },
-  {
-    name: "M.A. International Management - Specialisation Big Data Management - 120",
-    careId: "10008045_FI_BDM",
-    st_careId: "70",
-    careIdCs: "10008375_BDM",
-    intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22",
-  },
-  {
-    name: "M.A. International Management - Specialisation Engineering Management - 120",
-    careId: "10008045_FI_EM",
-    st_careId: "70",
-    careIdCs: "10008375_EM",
-    intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22",
-  },
-  {
-    name: "M.A. International Management - Specialisation IT Management - 120",
-    careId: "10008045_FI_ITM",
-    st_careId: "70",
-    careIdCs: "10008375_ITM",
-    intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22",
-  },
-  {
-    name: "M.A. International Management - Specialisation International Marketing - 120",
-    careId: "10008045_FI_IM",
-    st_careId: "70",
-    careIdCs: "10008375_IM",
-    intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22",
-    intake2: "Jan 22, Apr 22, Jul 22, Oct 22",
-  },
-  {
-    name: "M.A. International Management - Specialisation Finance & Accounting - 120",
-    careId: "10008045_FI_FA",
-    st_careId: "70",
-    careIdCs: "10008375_FA",
-    intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22",
-  },
-  {
-    name: "M.Eng. Engineering Management - 60",
-    careId: "10008075_FI",
-    st_careId: "70",
-    careIdCs: "10008374",
-    intake: "Oct 21, Apr 22, Oct 22",
-  },
-  {
-    name: "MBA - Specialisation Salesforce - 90",
-    careId: "121_FI_SF",
-    careIdCs: "10008379_SF",
-    intake: "Apr 22, Jul 22, Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
-  },
-  {
-    name: "M.Sc. Cyber Security Management - 60",
-    careId: "10008015_FI",
-    careIdCs: "10008534_CSM",
-    intake: "Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
-    studyLocation: "OnlyBerlin",
-  },
-  {
-    name: "B.Sc. Software Development - 180",
-    careId: "10008074_FI_SD",
-    careIdCs: "10008528_CS_SD",
-    intake: "Oct 22, Apr 23, Oct 23",
-  },
-  {
-    name: "B.Sc. Data Science - 180",
-    careId: "10007851",
-    careIdCs: "10008525_CS_DS",
-    intake: "Oct 22, Oct 23",
-  },
-  {
-    name: "M.Sc. Data Science - 60",
-    careId: "10007855",
-    careIdCs: "10008538_CS_DS",
-    intake: "Oct 22, Oct 23",
-    studyLocation: "OnlyBerlin",
-  },
-  {
-    name: "M.Sc. Data Science - 120",
-    careId: "10007854",
-    careIdCs: "10008537_CS_DS",
-    intake: "Oct 22, Oct 23",
-    studyLocation: "OnlyBerlin",
-  },
-];
+  let mT = [
+    {
+      name: "B.A. Business Administration - 180",
+      careId: "10007953_FI",
+      //"careIdCs" : '10007953_CS'
+      careIdCs: "10008367",
+      intake: "Oct 22, Jan 23, Apr 23,  Jul 23",
+    },
+    {
+      name: "B.A. Management - 240",
+      careId: "10008630_FI"
+    },
+    /*{
+      name: "B.A. Human Resource Management - 180",
+      careId: "10008709_FI"
+    },
+    {
+      name: "B.A. Marketing - 180",
+      careId: "10008708_FI"
+    },*/
+    {
+      name: "B.Sc. Industrial and Organisational Psychology - 180",
+      careId: "10008626_FI"
+    },
+    {
+      name: "B.Sc. Data Science - 180",
+      careId: "10007851",
+      careIdCs: "10008525_CS_DS",
+      intake: "Oct 22, Oct 23",
+    },
+    {
+      name: "M.Sc. Artificial Intelligence - 60",
+      careId: "10007858",
+    },
+    {
+      name: "M.Sc. Artificial Intelligence - 120",
+      careId: "10007857",
+      careIdCs: "10008529_CS_AI",
+      intake: "Oct 22, Apr 23, Oct 23",
+      studyLocation: "OnlyBerlin",
+    },
+    {
+      name: "M.Sc. Computer Science - 120",
+      careId: "10007941_FI",
+      //"careIdCs" : '10007952'
+      careIdCs: "10008373",
+      intake: "Oct 22, Jan 23, Oct 23",
+      intake2: "Apr 22, Oct 22, Apr 23, Oct 23",
+      studyLocation: "OnlyBerlin"
+    },
+  
+    {
+      name: "M.Sc. Data Science - 60",
+      careId: "10007855",
+      careIdCs: "10008538_CS_DS",
+      intake: "Oct 22, Oct 23",
+      studyLocation: "OnlyBerlin",
+    },
+    {
+      name: "M.Sc. Data Science - 120",
+      careId: "10007854",
+      careIdCs: "10008537_CS_DS",
+      intake: "Oct 22, Oct 23",
+      studyLocation: "OnlyBerlin",
+    },
+    {
+      name: "M.Sc. Cyber Security - 120",
+      careId: "10008014_FI",
+      careIdCs: "10008533_CS",
+      intake: "Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
+      studyLocation: "OnlyBerlin"
+    },
+    {
+      name: "M.Sc. Cyber Security Management - 60",
+      careId: "10008015_FI",
+      careIdCs: "10008534_CSM",
+      intake: "Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
+      studyLocation: "OnlyBerlin",
+    },
+    //added today
+    {
+      name: "M.Sc. Data Management - 60",
+      careId: "10008099_FI_DM",
+    },
+    {
+      name: "M.Sc. Data Management - 120",
+      careId: "10008098_FI_DM",
+    },
+    {
+      name: "M.Sc. Business Intelligence - 60",
+      careId: "10008093_FI_BI",
+    },
+    {
+      name: "M.Sc. Business Intelligence - 120",
+      careId: "10008092_FI_BI",
+    },
+    {
+      name: "M.Sc. Finance, Accounting & Taxation - 120",
+      careId: "10008096_FI_FAT",
+    },
+    {
+      name: "M.A. Management - 60",
+      careId: "10007958_FI",
+      //"careIdCs" : '10007958_CS'
+      careIdCs: "10008377",
+      intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22",
+    },
+    {
+      name: "M.A. Management - Specialisation Finance & Accounting - 60",
+      careId: "10007958_FI_FA",
+      //"careIdCs" : '10007958_CS_FA'
+      careIdCs: "10008377_FA",
+      intake: "Jan 22, Apr 22, Jul 22, Oct 22",
+    },
+    {
+      name: "M.A. Management - Specialisation Leadership - 60",
+      careId: "10007958_FI_L",
+    },
+    {
+      name: "M.A. International Healthcare Management - 60",
+      careId: "10008178_FI_HCM",
+    },
+    {
+      name: "M.A. International Healthcare Management - 120",
+      careId: "10008179_FI_HCM",
+    },
+    {
+      name: "M.A. Human Resource Management - 60",
+      careId: "10008137_FI_HRM",
+    },
+    {
+      name: "M.A. Human Resource Management - 120",
+      careId: "10008136_FI_HRM",
+    },
+    {
+      name: "M.A. Innovation & Entrepreneurship - 120",
+      careId: "10008132_FI_IE",
+    },
+    {
+      name: "B.A. Digital Business - 180",
+      careId: "10008068_FI",
+    },
+    //added today
+    {
+      name: "B.A. International Healthcare Management - 180",
+      careId: "10008144_FI_HCM",
+    },
+    {
+      name: "M.A. Management - Specialisation Engineering Management - 60",
+      careId: "10007958_FI_EM",
+      //"careIdCs" : '10007958_CS_EM'
+      careIdCs: "10008377_EM",
+      intake: "Jan 22, Apr 22, Jul 22, Oct 22",
+    },
+    {
+      name: "M.A. Management - Specialisation Big Data Management - 60",
+      careId: "10007958_FI_BDM",
+      //"careIdCs" : '10007958_CS_BDM'
+      careIdCs: "10008377_BDM",
+      intake: "Jan 22, Apr 22, Jul 22, Oct 22",
+      intake2: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22",
+    },
+    {
+      name: "M.A. Management - Specialisation IT Management - 60",
+      careId: "10007958_FI_ITM",
+      //"careIdCs" : '10007958_CS_ITM'
+      careIdCs: "10008377_ITM",
+      intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22",
+      intake2: "Jan 22, Apr 22, Jul 22, Oct 22",
+    },
+    {
+      name: "M.A. Management - Specialisation International Marketing - 60",
+      careId: "10007958_FI_IM",
+      //"careIdCs" : '10007958_CS_IM'
+      careIdCs: "10008377_IM",
+      intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22",
+      intake2: "Jan 22, Apr 22, Jul 22, Oct 22",
+    },
+    {
+      name: "B.Sc. Cyber Security - 180",
+      careId: "10007999_FI",
+      careIdCs: "10008524_CS",
+      intake: "Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
+    },
+    {
+      name: "MBA One-Year - 60",
+      careId: "120_FI",
+      //"careIdCs" : '120'
+      careIdCs: "10008378",
+      intake: "Oct 21, Apr 22, Oct 22, Jan 23, Apr 23, Oct 23",
+    },
+    {
+      name: "MBA - Master of Business Administration - 90",
+      careId: "121_FI",
+      //"careIdCs" : '121'
+      careIdCs: "10008379",
+      intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22, Jan 23, Apr 23, Jul 23",
+    },
+    {
+      name: "MBA - Specialisation Big Data Management - 90",
+      careId: "121_FI_BDM",
+      //"careIdCs" : '121_BDM'
+      careIdCs: "10008379_BDM",
+      intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22, Jan 23, Apr 23, Jul 23",
+    },
+    {
+      name: "MBA - Specialisation International Marketing - 90",
+      careId: "121_FI_IM",
+      //"careIdCs" : '121_IM'
+      careIdCs: "10008379_IM",
+      intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22, Jan 23, Apr 23, Jul 23",
+    },
+    {
+      name: "MBA - Specialisation Finance & Accounting - 90",
+      careId: "121_FI_FA",
+      //"careIdCs" : '121_FA'
+      careIdCs: "10008379_FA",
+      intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22, Jan 23, Apr 23, Jul 23",
+    },
+    {
+      name: "MBA - Specialisation Engineering Management - 90",
+      careId: "121_FI_EM",
+      //"careIdCs" : '121_EM'
+      careIdCs: "10008379_EM",
+      intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22, Jan 23, Apr 23, Jul 23",
+    },
+    {
+      name: "MBA - Specialisation IT Management - 90",
+      careId: "121_FI_ITM",
+      //"careIdCs" : '121_ITM'
+      careIdCs: "10008379_ITM",
+      intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22, Jan 23, Apr 23, Jul 23",
+    },
+    {
+      name: "MBA - Specialisation Health Care Management - 90",
+      careId: "121_FI_HCM",
+      careIdCs: "10008379_HCM",
+      intake: "Apr 22, Jul 22, Oct 22, Jan 23, Apr 23",
+    },
+    {
+      name: "MBA - Specialisation Human Resource Management - 90",
+      careId: "121_FI_HRM",
+      careIdCs: "10008379_HRM",
+      intake: "Apr 22, Jul 22, Oct 22, Jan 23, Apr 23",
+    },
+    {
+      name: "MBA - Specialisation Supply Chain Management - 90",
+      careId: "121_FI_SCM",
+      careIdCs: "10008379_SCM",
+      intake: "Apr 22, Jul 22, Oct 22, Jan 23, Apr 23",
+    },
+    {
+      name: "MBA - Specialisation Innovation & Entrepreneurship - 90",
+      careId: "121_FI_IE",
+      careIdCs: "10008379_IE",
+      intake: "Apr 22, Jul 22, Oct 22, Jan 23, Apr 23",
+    },
+    {
+      name: "MBA - Specialisation Artificial Intelligence - 90",
+      careId: "121_FI_AI",
+      careIdCs: "10008379_AI",
+      intake: "Apr 22, Jul 22, Oct 22, Jan 23, Apr 23",
+    },
+    {
+      name: "MBA - Specialisation E-Sports Management - 90",
+      careId: "121_FI_ESM",
+      careIdCs: "10008379_ESM",
+      intake: "Apr 22, Jul 22, Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
+    },
+    {
+      name: "MBA - Specialisation Salesforce - 90",
+      careId: "121_FI_SF",
+      careIdCs: "10008379_SF",
+      intake: "Apr 22, Jul 22, Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
+    },
+    {
+      name: "B.Sc. Applied Artificial Intelligence - 180",
+      careId: "10008073_FI_AI",
+      careIdCs: "10008523_CS_AAI",
+      intake: "Oct 22, Oct 23",
+      //needs to be there
+    },
+    {
+      name: "B.A. Entrepreneurship - 180",
+      careId: "10008062_FI",
+      careIdCs: "10008526_CS_ENT",
+      intake: "Oct 22",
+    },
+    {
+      name: "B.Sc. Business & IT - 180",
+      careId: "10008001_FI",
+      //"careIdCs" : '10008001_CS'
+      careIdCs: "10008368",
+      intake: "Oct 22, Jan 23, Apr 23,  Jul 23",
+    },
+    {
+      name: "B.Eng. Robotics - 180",
+      careId: "10007964_FI",
+      careIdCs: "10008527_CS_ROB",
+      intake: "Oct 22, Jan 23, Apr 23, Jul 23",
+    },
+    /*{
+          "name" : 'B.Eng. Engineering - 180',
+          "careId" : '10008091_FI_E'
+      },*/
+    {
+      name: "B.Eng. Industrial Engineering & Management - 180",
+      careId: "10008000_FI",
+      //"careIdCs" : '10008000_CS'
+      careIdCs: "10008370",
+      intake: "Oct 22, Jan 23, Apr 23,  Jul 23",
+    },
+    {
+      name: "B.A. International Management - 180",
+      careId: "10008002_FI",
+      //"careIdCs" : '10008002_CS'
+      careIdCs: "10008371",
+      intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22",
+    },
+    {
+      name: "B.A. Aviation Management - 180",
+      careId: "10008295_FI_AM",
+      careIdCs: "10008472",
+      intake: "Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
+    },
+    {
+      name: "B.A. Hospitality Management - 180",
+      careId: "10008294_FI_HM",
+      careIdCs: "10008477",
+      intake: "Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
+    },
+    {
+      name: "M.A. Marketing Management - 60",
+      careId: "10007977_FI",
+      careIdCs: "10008540_CS_MM",
+      intake: "Oct 22",
+      studyLocation: "OnlyBerlin",
+    },
+    {
+      name: "M.A. Marketing Management - 120",
+      careId: "10007976_FI",
+      careIdCs: "10008539_CS_MM",
+      intake: "Oct 22",
+      studyLocation: "OnlyBerlin",
+    },
+    {
+      name: "M.A. Information Technology Management - 60",
+      careId: "10008090_FI_ITM",
+    },
+    {
+      name: "M.A. Information Technology Management - 120",
+      careId: "10008089_FI_ITM",
+    },
+    {
+      name: "M.A. Digital Innovation & Intrapreneurship - 60",
+      careId: "10008133_FI_DII",
+    },
+    {
+      name: "M.A. Project Management - 60", //today
+      careId: "10008088_FI_PM",
+    },
+    {
+      name: "M.A. Project Management - 120", //today
+      careId: "10008087_FI_PM",
+    },
+    {
+      name: "B.Sc. Computer Science - 180",
+      careId: "10007944_FI",
+      careIdCs: "10008369",
+      intake: "Oct 21, Apr 22, Oct 22",
+    },
+    {
+      name: "B.Sc. Software Development - 180",
+      careId: "10008074_FI_SD",
+      careIdCs: "10008528_CS_SD",
+      intake: "Oct 22, Apr 23, Oct 23",
+    },
+    {
+      name: "M.A. International Management - 60",
+      careId: "10008044_FI",
+      st_careId: "70",
+      //"careIdCs" : '10008044_CS'
+      careIdCs: "10008376",
+      intake: "Jul 22, Oct 22, Jan 23, Apr 23",
+    },
+    {
+      name: "M.A. International Management - 120",
+      careId: "10008045_FI",
+      st_careId: "70",
+      //"careIdCs" : '10008045_CS'
+      careIdCs: "10008375",
+      intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22",
+    },
+    {
+      name: "M.A. International Management - Specialisation AI & Robotics - 120",
+      careId: "10008045_FI_AR",
+      st_careId: "70",
+      //"careIdCs" : '10008045_CS_AR'
+      careIdCs: "10008375_AR",
+      intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22",
+    },
+    {
+      name: "M.A. International Management - Specialisation Big Data Management - 120",
+      careId: "10008045_FI_BDM",
+      st_careId: "70",
+      //"careIdCs" : '10008045_CS_BDM'
+      careIdCs: "10008375_BDM",
+      intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22",
+    },
+    {
+      name: "M.A. International Management - Specialisation Engineering Management - 120",
+      careId: "10008045_FI_EM",
+      st_careId: "70",
+      //"careIdCs" : '10008045_CS_EM'
+      careIdCs: "10008375_EM",
+      intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22",
+    },
+    {
+      name: "M.A. International Management - Specialisation IT Management - 120",
+      careId: "10008045_FI_ITM",
+      st_careId: "70",
+      //"careIdCs" : '10008045_CS_ITM'
+      careIdCs: "10008375_ITM",
+      intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22",
+    },
+    {
+      name: "M.A. International Management - Specialisation International Marketing - 120",
+      careId: "10008045_FI_IM",
+      st_careId: "70",
+      //"careIdCs" : '10007958_CS_IM'
+      careIdCs: "10008375_IM",
+      intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22",
+      intake2: "Jan 22, Apr 22, Jul 22, Oct 22",
+    },
+    {
+      name: "M.A. International Management - Specialisation Finance & Accounting - 120",
+      careId: "10008045_FI_FA",
+      st_careId: "70",
+      //"careIdCs" : '10008045_CS_FA'
+      careIdCs: "10008375_FA",
+      intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22",
+    },
+    {
+      name: "M.Eng. Engineering Management - 60",
+      careId: "10008075_FI",
+      st_careId: "70",
+      //"careIdCs" : '10008075_CS'
+      careIdCs: "10008374",
+      intake: "Oct 22, Apr 22, Oct 22, Apr 23, Oct 23",
+      studyLocation: "OnlyBerlin"
+    },
+  ];
 //ALL THESE ARE FLEX PROGRAMS
 
 //online only
