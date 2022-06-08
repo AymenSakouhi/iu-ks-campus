@@ -125,6 +125,9 @@ function EmptyFields() {
 }
 
 function scrollTo() {
+  const maxDate = new Date();
+  maxDate.setFullYear(maxDate.getFullYear() - 14);
+
   if (
     $("#Degree").find(":selected").text().startsWith("S") ||
     $("#studyProgram").find(":selected").text().startsWith("S")
@@ -215,7 +218,7 @@ function scrollTo() {
         block: "center",
         inline: "nearest",
       });
-  } else if (document.getElementById("date-of-birth").value === "") {
+  } else if (document.getElementById("date-of-birth").value === "" || new Date(document.getElementById("date-of-birth").value) > maxDate) {
     document
       .getElementById("date-of-birth")
       .scrollIntoView({
@@ -1242,6 +1245,9 @@ function fullOut(dip) {
 }
 
 function validatefilledIn() {
+  const maxDate = new Date();
+  maxDate.setFullYear(maxDate.getFullYear() - 14);
+
   let requiredFields = document.getElementsByTagName("input");
   let arr = Array.from(requiredFields).filter((input) => input.required);
   let arr2 = $("label").filter(".pl-0");
@@ -1355,9 +1361,23 @@ function validatefilledIn() {
       arr2[i].style.borderColor = "green";
     }
   }
+
+  if(new Date(document.getElementById("date-of-birth").value) > maxDate ||  document.getElementById("date-of-birth").value === "" ) {
+    $("#date-of-birth")
+      .css("border-color", "red")
+      .addClass("field-error")
+      .removeClass("field-valid");
+  } else {
+    $("#date-of-birth").css("border-color", "green")
+      .removeClass("field-error")
+      .addClass("field-valid");
+  }
 }
 
 function checkingFields() {
+  const maxDate = new Date();
+  maxDate.setFullYear(maxDate.getFullYear() - 14);
+
   let myNameCheck = document.getElementById("first-name").value;
   let surNameCheck = document.getElementById("last-name").value;
 
@@ -1409,6 +1429,11 @@ function checkingFields() {
   ) {
     validatefilledIn();
     $("#myModal").modal();
+    document.getElementById("submit").disabled = false;
+    return false;
+  } else if(new Date(document.getElementById("date-of-birth").value) > maxDate){
+    validatefilledIn();
+    $("#dateOfBirthModal").modal();
     document.getElementById("submit").disabled = false;
     return false;
   } else if (!validateEmail(document.getElementById("e-mail").value)) {
