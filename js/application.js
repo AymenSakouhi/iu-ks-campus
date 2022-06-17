@@ -99,6 +99,15 @@ function EmptyFields() {
   if (document.getElementById("city").value === "") {
     labelContent += "~AddressCityInputEmpty";
   }
+  if (document.getElementById("phone").value === "") {
+    labelContent += "~PhoneInputEmpty";
+  }
+  if (document.getElementById("nr").value === "") {
+    labelContent += "~AddressNumberInputEmpty";
+  }
+  if (document.getElementById("postcode").value === "") {
+    labelContent += "~AddressPostcodeInputEmpty";
+  }
 
   if ($("input[name=school]:checked").length === 0) {
     labelContent += "~EducationLevelRadioButtonsEmpty";
@@ -1425,7 +1434,9 @@ function checkingFields() {
     document.getElementById("e-mail").value === "" ||
     document.getElementById("date-of-birth").value === "" ||
     document.getElementById("city").value === "" ||
-    document.getElementById("city").value === ""
+    document.getElementById("phone").value === "" ||
+    document.getElementById("nr").value === "" ||
+    document.getElementById("postcode").value === ""
   ) {
     validatefilledIn();
     $("#myModal").modal();
