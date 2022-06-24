@@ -314,52 +314,47 @@ document.getElementById("last-name").addEventListener("input", function () {
   this.value = this.value.replace(/[^\x00-\x7F]+/gi, "");
 });
 
-$(document).ready(function () {
+async function checkVoucher() {
   let ajaxRequest;
-  let preVoucher = voucherVar;
-  $("#voucher").keyup(function () {
-    let email = document.getElementById("e-mail").value;
-    let value = $(this).val();
-    clearTimeout(ajaxRequest);
-    ajaxRequest = setTimeout(
-      function (sn) {
-        $.ajax({
-          url:
-            "https://api.careerpartner.eu/centraldataservice-api/lara/api/v1/application/vouchers/" +
-            value +
-            "/validate",
-          type: "post",
-          headers: {
-            Authorization: "Basic VC2Bvuh4a5nAvhsd",
-            "Content-Type": "application/json",
-            "Accept-Language": "fr-CH, fr;q=0.9, en;q=0.8, de;q=0.7, *;q=0.5",
-          },
-          data: JSON.stringify({
-            email: email, //"erickrichard56@gmail.com" for test MCFKENYA
-            unit: "cs",
-          }),
-          dataType: "json",
-          success: function (data) {
-            console.info(data);
-            voucherVar = value;
-          },
-          error: function () {
-            console.log("voucher control failed by validation");
-            if (value.startsWith("AGENT")) {
-              voucherVar = value;
-              console.log("AGENT VOUCHER INSERTED");
-            } else {
-              voucherVar = preVoucher;
-              console.log("back to old voucher");
-            }
-          },
-        });
-      },
-      100,
-      value
-    );
+
+  let email = document.getElementById("e-mail").value;
+  let voucherValue = $("#voucher").val();
+
+  if (voucherValue.toLowerCase().includes("agent")) {
+    $("#agent-voucher").removeClass("hide");
+    return;
+  } else {
+    $("#agent-voucher").addClass("hide");
+  }
+
+  // clearTimeout(ajaxRequest);
+  ajaxRequest = await $.ajax({
+    url:
+      "https://api.careerpartner.eu/centraldataservice-api/lara/api/v1/application/vouchers/" +
+      voucherValue +
+      "/validate",
+    type: "post",
+    headers: {
+      Authorization: "Basic VC2Bvuh4a5nAvhsd",
+      "Content-Type": "application/json",
+      "Accept-Language": "fr-CH, fr;q=0.9, en;q=0.8, de;q=0.7, *;q=0.5",
+    },
+    data: JSON.stringify({
+      email: email, //"erickrichard56@gmail.com" for test MCFKENYA
+      unit: businessUnit,
+    }),
+    dataType: "json",
+    success: function (data) {
+      console.log("voucher control succeeded");
+    },
+    error: function () {
+      console.log("voucher control failed");
+      return voucherVar;
+    },
   });
-});
+  return ajaxRequest;
+
+}
 
 $(window).scroll(function () {
   if ($(window).scrollTop() == $(document).height() - $(window).height()) {
@@ -1530,195 +1525,204 @@ function activate() {
 
     let optIn = document.getElementById("toCheck").checked;
 
-    let t = {
-      degree: degree,
-      name: myName,
-      surName: surName,
-      street: street,
-      streetno: streetno,
-      postcode: postcode,
-      city: city,
-      country: country,
-      nationality: nationality,
-      mobileNumber: fullNumber,
-      email: email,
-      studyProgram: studyProgram,
-      studyStartDate: studyStartDate,
-      englishLevel: englishLevel,
-      workExperience: workExperience,
-      budgetPerMonth: budgetPerMonth,
-      diplom: diplom,
-      gender: gender,
-      finalPrice: finalPrice,
-      dateOfBirth: dateOfBirth,
-      studyDuration: studyDuration,
-      locationSite: locationSite,
-      intake: startDate,
-      voucher: voucherVar,
-      optIn: optIn,
-      businessUnit: businessUnit,
-      key: "",
-      completed: completed,
-      currentPage: currentPage,
-      obwVersion: obwVersion,
-      agbVersion: agbVersion,
-    };
-    let obj;
+    const promise = checkVoucher();
+    promise.then(() => {
+      voucherVar = $("#voucher").val();
+    }).catch(() => {
+      // console.log("failed to verify voucher")
+    })
+    .finally(() => {
 
-    fetch(
-      "https://api.careerpartner.eu/centraldataservice-api/lara/api/v2/application/obw",
-      {
-        method: "POST",
-        headers: {
-          //Authorization: "TPPDVgSNCvp4TY5y",
-          Authorization: "74UgeuBcRZjX6akV",
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          key: null,
-          completed: completed,
-          currentPage: currentPage,
-          businessUnit: businessUnit,
-          version: null,
-          formVersion: "Application",
-          locale: "en",
-          obwVersion: obwVersion,
-          gender: gender,
-          firstName: myName,
-          lastName: surName,
-          nationality: nationality,
-          dateOfBirth: dateOfBirth,
-          placeOfBirth: nationality,
-          startDate: startDate,
-          countryOfBirth: country,
-          email: email,
-          phone: fullNumber,
-          street: street,
-          streetNo: streetno,
-          zip: postcode,
-          city: city,
-          country: country,
-          studyProgram: studyProgram,
-          studyStartDate: studyStartDate,
-          intake: null,
-          studySite: locationSite,
-          duration: studyDuration,
-          monthlyFee: finalPrice,
-          graduationFee: 0,
-          voucherId: voucherVar,
-          paymentInterval: null,
-          directDebit: directDebit,
-          accountOwner: null,
-          accountBank: null,
-          accountIBAN: null,
-          accountBIC: null,
-          agbVersion: agbVersion,
-          hasStudied: null,
-          hasDiploma: diplom,
-          referralCode: null,
-          referrerName: null,
-          referrerEmail: null,
-          ectsAchieved: null,
-          masterPermission: null,
-          ipad: false,
-          attendanceDays: null,
-          englishLevel: englishLevel,
-          workExperience: workExperience,
-          budgetPerMonth: budgetPerMonth,
-          attendeeProgram: null,
-          isESigningAgreed: false,
-          startMonth: null,
-          gaClientId: th().get("clientId"),
-          gaGuid: th().get("userId"),
-          gaTrackingId: th().get("trackingId"),
-          gaReferrer: th().get("referrer"),
-          gtmUtm: z,
-          gtmGclid: q,
-          gtmSource: null,
-          optIn: optIn,
-        }),
-      }
-    )
-      .then((res) => {
-        if (!res.ok) {
-          throw Error("error getting the API to POST");
-        }
-        return res.json();
-      })
-      .then((data) => {
-        obj = data;
-      })
-      .then(() => {
-        t.key = obj.key;
-        console.log(obj.key);
+      let t = {
+        degree: degree,
+        name: myName,
+        surName: surName,
+        street: street,
+        streetno: streetno,
+        postcode: postcode,
+        city: city,
+        country: country,
+        nationality: nationality,
+        mobileNumber: fullNumber,
+        email: email,
+        studyProgram: studyProgram,
+        studyStartDate: studyStartDate,
+        englishLevel: englishLevel,
+        workExperience: workExperience,
+        budgetPerMonth: budgetPerMonth,
+        diplom: diplom,
+        gender: gender,
+        finalPrice: finalPrice,
+        dateOfBirth: dateOfBirth,
+        studyDuration: studyDuration,
+        locationSite: locationSite,
+        intake: startDate,
+        voucher: voucherVar,
+        optIn: optIn,
+        businessUnit: businessUnit,
+        key: "",
+        completed: completed,
+        currentPage: currentPage,
+        obwVersion: obwVersion,
+        agbVersion: agbVersion,
+      };
+      let obj;
 
-        for (let i = 0; i < $(".file-row").length; i++) {
-          console.log(i);
-          data.append("upload", files.files[i]);
-          fetch(
-            "https://api.careerpartner.eu/centraldataservice-api/lara/api/v2/file/" +
-              obj.key +
-              "/file-upload?type=application",
-            {
-              method: "POST",
-              body: data,
-            }
-          ).then((res) => {
-            if (!res.ok) {
-              throw Error("error getting the API to POST");
-            }
-            console.log(res);
-          });
-        }
-        //study-model it as a json
-        localStorage.setItem("allData", JSON.stringify(t));
-        window.dataLayer.push({
-          event: "ee-transaction",
-          eventData: {
-            label: "",
-            action: "transaction",
-            category: "ecommerce",
+      fetch(
+        "https://api.careerpartner.eu/centraldataservice-api/lara/api/v2/application/obw",
+        {
+          method: "POST",
+          headers: {
+            //Authorization: "TPPDVgSNCvp4TY5y",
+            Authorization: "74UgeuBcRZjX6akV",
+            "Content-Type": "application/json",
           },
-          ecommerce: {
-            purchase: {
-              actionField: {
-                id: t.key,
-                coupon: t.voucher,
-              },
-              products: [
-                {
-                  name: $("#studyProgram :selected").text(),
-                  id: t.studyProgram,
-                  category: "studiegang/" + degree.toLowerCase(),
-                  variant: t.studyDuration + "Monat~" + t.studyStartDate,
-                  quantity: 1,
-                  brand: t.locationSite,
-                  value: t.finalPrice,
-                  location: campsite,
-                  duration: t.duration,
-                  intake: t.intake,
-                  businessUnit: t.businessUnit,
-                },
-              ],
-            },
-          },
-          user: {
-            id: t.key,
-          },
-          mqa: {
-            budget: budgetPerMonth,
-            englishlevel: englishLevel,
+          body: JSON.stringify({
+            key: null,
+            completed: completed,
+            currentPage: currentPage,
+            businessUnit: businessUnit,
+            version: null,
+            formVersion: "Application",
+            locale: "en",
+            obwVersion: obwVersion,
+            gender: gender,
+            firstName: myName,
+            lastName: surName,
+            nationality: nationality,
+            dateOfBirth: dateOfBirth,
+            placeOfBirth: nationality,
+            startDate: startDate,
+            countryOfBirth: country,
+            email: email,
+            phone: fullNumber,
+            street: street,
+            streetNo: streetno,
+            zip: postcode,
+            city: city,
+            country: country,
+            studyProgram: studyProgram,
+            studyStartDate: studyStartDate,
+            intake: null,
+            studySite: locationSite,
+            duration: studyDuration,
+            monthlyFee: finalPrice,
+            graduationFee: 0,
+            voucherId: voucherVar,
+            paymentInterval: null,
+            directDebit: directDebit,
+            accountOwner: null,
+            accountBank: null,
+            accountIBAN: null,
+            accountBIC: null,
+            agbVersion: agbVersion,
+            hasStudied: null,
+            hasDiploma: diplom,
+            referralCode: null,
+            referrerName: null,
+            referrerEmail: null,
+            ectsAchieved: null,
+            masterPermission: null,
+            ipad: false,
+            attendanceDays: null,
+            englishLevel: englishLevel,
             workExperience: workExperience,
-            diploma: diplom,
-          },
-        });
-        console.log(t.businessUnit);
-        console.log(t.completed);
-        setTimeout(function () {
-          window.location.href = "./upload/index.html?key=" + t.key;
-        }, 5000);
-      })
-      .catch((error) => console.log(error));
+            budgetPerMonth: budgetPerMonth,
+            attendeeProgram: null,
+            isESigningAgreed: false,
+            startMonth: null,
+            gaClientId: th().get("clientId"),
+            gaGuid: th().get("userId"),
+            gaTrackingId: th().get("trackingId"),
+            gaReferrer: th().get("referrer"),
+            gtmUtm: z,
+            gtmGclid: q,
+            gtmSource: null,
+            optIn: optIn,
+          }),
+        }
+      )
+        .then((res) => {
+          if (!res.ok) {
+            throw Error("error getting the API to POST");
+          }
+          return res.json();
+        })
+        .then((data) => {
+          obj = data;
+        })
+        .then(() => {
+          t.key = obj.key;
+          console.log(obj.key);
+
+          for (let i = 0; i < $(".file-row").length; i++) {
+            console.log(i);
+            data.append("upload", files.files[i]);
+            fetch(
+              "https://api.careerpartner.eu/centraldataservice-api/lara/api/v2/file/" +
+                obj.key +
+                "/file-upload?type=application",
+              {
+                method: "POST",
+                body: data,
+              }
+            ).then((res) => {
+              if (!res.ok) {
+                throw Error("error getting the API to POST");
+              }
+              console.log(res);
+            });
+          }
+          //study-model it as a json
+          localStorage.setItem("allData", JSON.stringify(t));
+          window.dataLayer.push({
+            event: "ee-transaction",
+            eventData: {
+              label: "",
+              action: "transaction",
+              category: "ecommerce",
+            },
+            ecommerce: {
+              purchase: {
+                actionField: {
+                  id: t.key,
+                  coupon: t.voucher,
+                },
+                products: [
+                  {
+                    name: $("#studyProgram :selected").text(),
+                    id: t.studyProgram,
+                    category: "studiegang/" + degree.toLowerCase(),
+                    variant: t.studyDuration + "Monat~" + t.studyStartDate,
+                    quantity: 1,
+                    brand: t.locationSite,
+                    value: t.finalPrice,
+                    location: campsite,
+                    duration: t.duration,
+                    intake: t.intake,
+                    businessUnit: t.businessUnit,
+                  },
+                ],
+              },
+            },
+            user: {
+              id: t.key,
+            },
+            mqa: {
+              budget: budgetPerMonth,
+              englishlevel: englishLevel,
+              workExperience: workExperience,
+              diploma: diplom,
+            },
+          });
+          console.log(t.businessUnit);
+          console.log(t.completed);
+          setTimeout(function () {
+            window.location.href = "./upload/index.html?key=" + t.key;
+          }, 5000);
+        })
+        .catch((error) => console.log(error));
+      });
     return false;
   }
 }
