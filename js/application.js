@@ -1482,7 +1482,8 @@ function activate() {
     let country = document.getElementById("country").value;
     let nationality = document.getElementById("nationality").value;
     let studyStartDate =
-      document.getElementsByClassName("study-start")[0].value;
+      // document.getElementsByClassName("study-start")[0].value;
+      document.getElementsByClassName("study-start")[0].value.replace(/T.*/,'').split('/').join('-');
     let fullNumber =
       document.getElementsByClassName("iti__selected-dial-code")[0].innerText +
       document.getElementById("phone").value;
