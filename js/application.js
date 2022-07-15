@@ -23,6 +23,7 @@ let allIntakes = [
   "oct23",
 ];
 let difference = [];
+let studyStartDate;
 
 /*let discMyStu180B = 0.770081;
 let discMyStu60M = 0.87243;
@@ -1474,9 +1475,6 @@ function activate() {
     let city = document.getElementById("city").value;
     let country = document.getElementById("country").value;
     let nationality = document.getElementById("nationality").value;
-    let studyStartDate =
-      // document.getElementsByClassName("study-start")[0].value;
-      document.getElementsByClassName("study-start")[0].value.replace(/T.*/,'').split('/').join('-');
     let fullNumber =
       document.getElementsByClassName("iti__selected-dial-code")[0].innerText +
       document.getElementById("phone").value;
@@ -2704,54 +2702,64 @@ function checkIntakeStart() {
     case "October 2021": {
       document.getElementsByClassName("study-start")[0].value = "2021/10/01";
       document.getElementsByClassName("study-start")[1].value = "2021/10/01";
+      studyStartDate = "2021-10-01";
 
       break;
     }
     case "October 2022": {
       document.getElementsByClassName("study-start")[0].value = "2022/10/01";
       document.getElementsByClassName("study-start")[1].value = "2022/10/01";
+      studyStartDate = "2022-10-01";
 
       break;
     }
     case "January 2022": {
       document.getElementsByClassName("study-start")[0].value = "2022/01/01";
       document.getElementsByClassName("study-start")[1].value = "2022/01/01";
+      studyStartDate = "2022-01-01";
 
       break;
     }
     case "April 2022": {
       document.getElementsByClassName("study-start")[0].value = "2022/04/01";
       document.getElementsByClassName("study-start")[1].value = "2022/04/01";
+      studyStartDate = "2022-04-01";
 
       break;
     }
     case "April 2023": {
       document.getElementsByClassName("study-start")[0].value = "2023/04/01";
       document.getElementsByClassName("study-start")[1].value = "2023/04/01";
+      studyStartDate = "2023-04-01";
 
       break;
     }
     case "October 2023": {
       document.getElementsByClassName("study-start")[0].value = "2023/10/01";
       document.getElementsByClassName("study-start")[1].value = "2023/10/01";
+      studyStartDate = "2023-10-01";
 
       break;
     }
     case "January 2023": {
       document.getElementsByClassName("study-start")[0].value = "2023/01/01";
       document.getElementsByClassName("study-start")[1].value = "2023/01/01";
+      studyStartDate = "2023-01-01";
 
       break;
     }
     case "July 2023": {
       document.getElementsByClassName("study-start")[0].value = "2023/07/01";
       document.getElementsByClassName("study-start")[1].value = "2023/07/01";
+      studyStartDate = "2023-07-01";
 
       break;
     }
     default: {
       document.getElementsByClassName("study-start")[0].value = "2022/07/01";
       document.getElementsByClassName("study-start")[1].value = "2022/07/01";
+      studyStartDate = "2022-07-01";
+    
     }
   }
 }
