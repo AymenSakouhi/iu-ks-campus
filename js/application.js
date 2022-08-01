@@ -1077,7 +1077,7 @@ function removeBadHonnefBasedIntake(curIntake) {
       name: "M.A. Marketing Management - 120",
       careId: "10007976_FI",
       careIdCs: "10008539_CS_MM",
-      intake: "Jan 23, Apr 23",
+      intake: "Jan 23, Apr 23, Oct 23",
       studyLocation: "OnlyBerlin",
     },
     {
