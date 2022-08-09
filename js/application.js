@@ -1309,7 +1309,7 @@ function validatefilledIn() {
       arr2[i].style.borderColor = "green";
     }
   }
-  for (let i = 10; i < 14; i++) {
+  for (let i = 5; i < 14; i++) {
     if ($("input[name=gender]:checked").length === 0) {
       arr2[i].style.borderColor = "red";
       setTimeout(function () {
@@ -1349,16 +1349,16 @@ function validatefilledIn() {
       arr2[i].style.borderColor = "green";
     }
   }
-  for (let i = 30; i < 39; i++) {
-    if ($("input[name=workexperience]:checked").length === 0) {
-      arr2[i].style.borderColor = "red";
-      setTimeout(function () {
-        arr2[i].style.borderColor = "";
-      }, 3000);
+  for (let i = 21; i < 31; i++) {
+    if ($('input[name=workexperience]:checked').length === 0) {
+        arr2[i].style.borderColor = 'red'
+        setTimeout(function () {
+            arr2[i].style.borderColor = ''
+        },3000)
     } else {
-      arr2[i].style.borderColor = "green";
+        arr2[i].style.borderColor = 'green'
     }
-  }
+}
 
   if(new Date(document.getElementById("date-of-birth").value) > maxDate ||  document.getElementById("date-of-birth").value === "" ) {
     $("#date-of-birth")
@@ -1429,11 +1429,13 @@ function checkingFields() {
   ) {
     validatefilledIn();
     $("#myModal").modal();
+    
     document.getElementById("submit").disabled = false;
     return false;
   } else if(new Date(document.getElementById("date-of-birth").value) > maxDate){
     validatefilledIn();
     $("#dateOfBirthModal").modal();
+    
     document.getElementById("submit").disabled = false;
     return false;
   } else if (!validateEmail(document.getElementById("e-mail").value)) {
@@ -1740,9 +1742,9 @@ function findOutAndChange(x, y) {
       } else if (D1.value === "Female") {
         D2[i].value = 2;
       } else if (D1.value === "Non-Binary") {
-        D2[i].value = 1;
+        D2[i].value = 3;
       } else {
-        D2[i].value = 1;
+        D2[i].value = 0;
       }
     }
   } else if (y === "diploma") {
@@ -1794,6 +1796,7 @@ function findOutAndChange(x, y) {
         }*/
     removeBadHonnefBasedIntake("oct22");
     checkIntakeStart();
+    
   } else if (x === "summerintake3") {
     document.getElementsByClassName("intake")[0].value = "2023-04-01";
     document.getElementsByClassName("intake")[1].value = "2023-04-01";
@@ -2584,45 +2587,29 @@ document.getElementById("Degree").addEventListener("change", function () {
     fullOut("M");
     starting();
     $(".siteRow").hide();
-    document.getElementById("bgrInformation").innerHTML =
-      "Do you have a Bachelor Diploma?";
+    document.getElementById("bgrInformation").innerHTML = "Do you have a Bachelor Diploma?";
     document.getElementById("workExperienceRow").classList.remove("hide");
     document.getElementsByClassName("numMonth")[0].innerHTML = 12;
     document.getElementById("monthsone").value = "12";
 
-    document.getElementsByClassName("study-programme")[0].value = $(
-      "#studyProgram"
-    )
-      .find(":selected")
-      .text();
-    document.getElementsByClassName("study-programme")[1].value = $(
-      "#studyProgram"
-    )
-      .find(":selected")
-      .text();
+    document.getElementsByClassName("study-programme")[0].value = $("#studyProgram").find(":selected").text();
+    document.getElementsByClassName("study-programme")[1].value = $("#studyProgram").find(":selected").text();
     document.getElementsByClassName("finalPrice")[0].classList.add("crossed");
     document.getElementsByClassName("finalPrice")[1].classList.add("crossed");
+    
   } else {
     fullOut("B");
     starting();
     $(".siteRow").show();
-    document.getElementById("bgrInformation").innerHTML =
-      "Do you have a High School Diploma?";
+    document.getElementById("bgrInformation").innerHTML = "Do you have a High School Diploma?";
     document.getElementById("workExperienceRow").classList.add("hide");
     document.getElementsByClassName("numMonth")[0].innerHTML = 36;
     document.getElementById("monthsone").value = "36";
-    document.getElementsByClassName("study-programme")[0].value = $(
-      "#studyProgram"
-    )
-      .find(":selected")
-      .text();
-    document.getElementsByClassName("study-programme")[1].value = $(
-      "#studyProgram"
-    )
-      .find(":selected")
-      .text();
+    document.getElementsByClassName("study-programme")[0].value = $("#studyProgram").find(":selected").text();
+    document.getElementsByClassName("study-programme")[1].value = $("#studyProgram").find(":selected").text();
     document.getElementsByClassName("finalPrice")[0].classList.add("crossed");
     document.getElementsByClassName("finalPrice")[1].classList.add("crossed");
+    PriceChange();
   }
 });
 

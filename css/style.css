@@ -101,7 +101,7 @@ html{overflow-x:hidden;}
 .content input[type="text"],.content input[type="email"],
 .content input[type="password"],.content input[type="date"],.content select,.content textarea{margin:0px 0 3px; padding:0px 15px; height:50px; border:#A5ABA6 solid 1px; font-size:16px; line-height: normal; color:#000; font-weight:400; border-radius:3px; width:100%;}
 .content textarea{height:105px; resize: none;}
-.content input[type="submit"]{margin:0px 0 0px; padding:0px 24px; width:auto; height:auto; border:#e5e5e5 solid 0px; font-size:16px; line-height:50px; display:block; font-weight:700; border-radius:8px; background:#3772FF; color:#fff; text-align:center; text-transform:uppercase;}
+.content input[type="submit"], input[type="button"]{margin:0px 0 0px; padding:0px 24px; width:auto; height:auto; border:#e5e5e5 solid 0px; font-size:16px; line-height:50px; display:block; font-weight:700; border-radius:8px; background:#3772FF; color:#fff; text-align:center; text-transform:uppercase;}
 .content [class*="col-"]{padding-left:10px;padding-right:10px;}
 .formleft{padding-right:8% !important; position:relative; border-right:#A5ABA6 solid 0px;}
 .formleft:before{position:absolute; right:3%; top:7%; content:''; width:1px; height:90%; background:#A5ABA6;}
@@ -301,7 +301,7 @@ label.accept input[type="checkbox"]{margin-right:5px; vertical-align:middle;}
 .upload-border:nth-child(2){padding-left:60px; padding-right:35px;}
 .thankyou-content label{font-size:26px; line-height:40px; font-weight:600; text-transform:uppercase; margin-bottom:14px;}
 .thankyou-content label input[type="checkbox"]{margin-top:5px; vertical-align:top;width: 30px; height: 30px;}
-.thankyou-content input[type="submit"]{margin:0px 0 0px; padding:0px 24px; width:auto; height:auto; border:#e5e5e5 solid 0px; font-size:16px; line-height:50px; display:inline; font-weight:700; border-radius:0px; background:#3772FF; color:#fff; text-align:center; text-transform:uppercase;margin: 10px 0px 10px 0px;border-radius: 5px}
+.thankyou-content input[type="submit"], input[type="button"]{margin:0px 0 0px; padding:0px 24px; width:auto; height:auto; border:#e5e5e5 solid 0px; font-size:16px; line-height:50px; display:inline; font-weight:700; border-radius:0px; background:#3772FF; color:#fff; text-align:center; text-transform:uppercase;margin: 10px 0px 10px 0px;border-radius: 5px}
 /*.thankyou-content input[type="submit"] .download{margin:0px 0 0px; padding:0px 24px; width:auto; height:auto; border:#e5e5e5 solid 0px; font-size:16px; line-height:50px; display:inline; font-weight:700; border-radius:0px; background:#3772FF; color:#fff; text-align:center; text-transform:uppercase;margin: 10px 0px 10px 10px}*/
 .thankyou-content #download2{margin:0px 0 0px; padding:0px 24px; width:auto; height:auto; border:#e5e5e5 solid 0px; font-size:16px; line-height:50px; display:inline; font-weight:700; border-radius:0px; background:#3772FF; color:#fff; text-align:center; text-transform:uppercase;margin: 10px 0px 10px 0px;border-radius: 5px}
 .fileupload{background:#fff; border-radius:5px; border:2px dashed #A5ABA6; padding:43px 20px; text-align:center; margin:15px 0 60px; position:relative; cursor:pointer;}
