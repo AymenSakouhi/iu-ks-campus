@@ -2587,7 +2587,7 @@ document.getElementById("Degree").addEventListener("change", function () {
     fullOut("M");
     starting();
     $(".siteRow").hide();
-    document.getElementById("bgrInformation").innerHTML = "Do you have a Bachelor Diploma?";
+    document.getElementById("bgrInformation").innerHTML = "Do you have a Bachelor Diploma?*";
     document.getElementById("workExperienceRow").classList.remove("hide");
     document.getElementsByClassName("numMonth")[0].innerHTML = 12;
     document.getElementById("monthsone").value = "12";
@@ -2601,7 +2601,7 @@ document.getElementById("Degree").addEventListener("change", function () {
     fullOut("B");
     starting();
     $(".siteRow").show();
-    document.getElementById("bgrInformation").innerHTML = "Do you have a High School Diploma?";
+    document.getElementById("bgrInformation").innerHTML = "Do you have a High School Diploma?*";
     document.getElementById("workExperienceRow").classList.add("hide");
     document.getElementsByClassName("numMonth")[0].innerHTML = 36;
     document.getElementById("monthsone").value = "36";
@@ -2623,7 +2623,7 @@ document.getElementById("studyProgram").addEventListener("change", function () {
   if ($("#studyProgram :selected").text().includes("60")) {
     starting();
     document.getElementById("bgrInformation").innerHTML =
-      "Do you have a Bachelor Diploma?";
+      "Do you have a Bachelor Diploma?*";
     document.getElementsByClassName("numMonth")[0].innerHTML = 12;
     document.getElementById("monthsone").value = "12";
     document.getElementsByClassName("study-programme")[0].value = $(
@@ -2639,7 +2639,7 @@ document.getElementById("studyProgram").addEventListener("change", function () {
   } else if ($("#studyProgram :selected").text().includes("120")) {
     starting();
     document.getElementById("bgrInformation").innerHTML =
-      "Do you have a Bachelor Diploma?";
+      "Do you have a Bachelor Diploma?*";
     document.getElementsByClassName("numMonth")[0].innerHTML = 24;
     document.getElementById("monthsone").value = "24";
     document.getElementsByClassName("study-programme")[0].value = $(
@@ -2655,7 +2655,7 @@ document.getElementById("studyProgram").addEventListener("change", function () {
   } else if ($("#studyProgram :selected").text().includes("90")) {
     starting();
     document.getElementById("bgrInformation").innerHTML =
-      "Do you have a Bachelor Diploma?";
+      "Do you have a Bachelor Diploma?*";
     document.getElementsByClassName("numMonth")[0].innerHTML = 18;
     document.getElementById("monthsone").value = "18";
     document.getElementsByClassName("study-programme")[0].value = $(
