@@ -47,8 +47,10 @@ function workExperience() {
 let labelContent = "";
 
 const validateEmail = (email) => {
-  return email.match(
-    /^(([^<>()[\]\\.,;:\s@\/\u2014/"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+  return String(email)
+    .toLowerCase()
+    .match(
+    /^(([^<>()[\]\\.,;:\s@\/\u2014\u2013/"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
   );
 };
 
@@ -91,9 +93,9 @@ function EmptyFields() {
   if (document.getElementById("e-mail").value === "") {
     labelContent += "~EmailInputEmpty";
   }
-  if (!validateEmail(document.getElementById("e-mail").value)) {
+  /* if (!validateEmail(document.getElementById("e-mail").value)) {
     labelContent += "~falsyEmail";
-  }
+  } */
   if (document.getElementById("date-of-birth").value === "") {
     labelContent += "~dateOfBirthInputEmpty";
   }
@@ -218,8 +220,7 @@ function scrollTo() {
         inline: "nearest",
       });
   } else if (
-    document.getElementById("e-mail").value === "" ||
-    !validateEmail(document.getElementById("e-mail").value)
+    document.getElementById("e-mail").value === "" || !validateEmail(document.getElementById("e-mail").value)
   ) {
     document
       .getElementById("e-mail")
@@ -1370,6 +1371,18 @@ function validatefilledIn() {
       .removeClass("field-error")
       .addClass("field-valid");
   }
+
+  if(!validateEmail($("#e-mail").val())) {
+    $("#e-mail")
+      .css("border-color", "red")
+      .addClass("field-error")
+      .removeClass("field-valid");
+  } else {
+    $("#e-mail")
+      .css("border-color", "green")
+      .removeClass("field-error")
+      .addClass("field-valid");
+  }
 }
 
 function checkingFields() {
@@ -1438,7 +1451,8 @@ function checkingFields() {
     
     document.getElementById("submit").disabled = false;
     return false;
-  } else if (!validateEmail(document.getElementById("e-mail").value)) {
+  } else if(!validateEmail($("#e-mail").val())){
+    console.log("email wrong")
     validatefilledIn();
     $("#emailModal").modal();
     document.getElementById("submit").disabled = false;
