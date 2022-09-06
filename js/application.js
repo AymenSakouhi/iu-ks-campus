@@ -572,7 +572,7 @@ document.querySelectorAll(".discountPrice").forEach((item) => {
 NanBadHonnef = [
   {
     name: "M.A. International Management - 60",
-    tillIntake: "Jul 22, Oct 22, Jan 23, Apr 23",
+    tillIntake: "Jan 23, Apr 23",
   },
   {
     name: "M.Eng. Engineering Management - 60",
@@ -580,7 +580,7 @@ NanBadHonnef = [
   },
   {
     name: "M.Sc. Computer Science - 120",
-    tillIntake: "Oct 22, Jan 23, Oct 23",
+    tillIntake: "Jan 23, Oct 23",
   },
   {
     name: "M.A. International Management - 120",
@@ -749,7 +749,7 @@ function removeBadHonnefBasedIntake(curIntake) {
       careId: "10007953_FI",
       //"careIdCs" : '10007953_CS'
       careIdCs: "10008367",
-      intake: "Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
+      intake: "Jan 23, Apr 23, Jul 23, Oct 23",
     },
     {
       name: "B.A. Management - 240",
@@ -789,8 +789,8 @@ function removeBadHonnefBasedIntake(curIntake) {
       careId: "10007941_FI",
       //"careIdCs" : '10007952'
       careIdCs: "10008373",
-      intake: "Oct 22, Apr 23, Oct 23",
-      intake2: "Apr 22, Oct 22, Apr 23, Oct 23",
+      intake: "Apr 23, Oct 23",
+      intake2: "Apr 23, Oct 23",
       studyLocation: "OnlyBerlin"
     },
   
@@ -798,7 +798,7 @@ function removeBadHonnefBasedIntake(curIntake) {
       name: "M.Sc. Data Science - 60",
       careId: "10007855",
       careIdCs: "10008538_CS_DS",
-      intake: "Oct 22, Oct 23",
+      intake: "Oct 23",
       studyLocation: "OnlyBerlin",
     },
     {
@@ -841,14 +841,14 @@ function removeBadHonnefBasedIntake(curIntake) {
       careId: "10007958_FI",
       //"careIdCs" : '10007958_CS'
       careIdCs: "10008377",
-      intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22",
+      intake: "Jan 23, Apr 23, Jul 23, Oct 23",
     },
     {
       name: "M.A. Management - Specialisation Finance & Accounting - 60",
       careId: "10007958_FI_FA",
       //"careIdCs" : '10007958_CS_FA'
       careIdCs: "10008377_FA",
-      intake: "Jan 22, Apr 22, Jul 22, Oct 22",
+      intake: "Jan 23, Apr 23, Jul 23, Oct 23",
     },
     {
       name: "M.A. Management - Specialisation Leadership - 60",
@@ -888,14 +888,14 @@ function removeBadHonnefBasedIntake(curIntake) {
       careId: "10007958_FI_EM",
       //"careIdCs" : '10007958_CS_EM'
       careIdCs: "10008377_EM",
-      intake: "Jan 22, Apr 22, Jul 22, Oct 22",
+      intake: "Jan 23, Apr 23, Jul 23, Oct 23",
     },
     {
       name: "M.A. Management - Specialisation Big Data Management - 60",
       careId: "10007958_FI_BDM",
       //"careIdCs" : '10007958_CS_BDM'
       careIdCs: "10008377_BDM",
-      intake: "Jan 22, Apr 22, Jul 22, Oct 22",
+      intake: "Jan 23, Apr 23, Jul 23, Oct 23",
       intake2: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22",
     },
     {
@@ -903,7 +903,7 @@ function removeBadHonnefBasedIntake(curIntake) {
       careId: "10007958_FI_ITM",
       //"careIdCs" : '10007958_CS_ITM'
       careIdCs: "10008377_ITM",
-      intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22",
+      intake: "Jan 23, Apr 23, Jul 23, Oct 23",
       intake2: "Jan 22, Apr 22, Jul 22, Oct 22",
     },
     {
@@ -911,111 +911,111 @@ function removeBadHonnefBasedIntake(curIntake) {
       careId: "10007958_FI_IM",
       //"careIdCs" : '10007958_CS_IM'
       careIdCs: "10008377_IM",
-      intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22",
+      intake: "Jan 23, Apr 23, Jul 23, Oct 23",
       intake2: "Jan 22, Apr 22, Jul 22, Oct 22",
     },
     {
       name: "B.Sc. Cyber Security - 180",
       careId: "10007999_FI",
       careIdCs: "10008524_CS",
-      intake: "Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
+      intake: "Jan 23, Apr 23, Jul 23, Oct 23",
     },
     {
       name: "MBA One-Year - 60",
       careId: "120_FI",
       //"careIdCs" : '120'
       careIdCs: "10008378",
-      intake: "Oct 21, Apr 22, Oct 22, Jan 23, Apr 23, Oct 23",
+      intake: "Jan 23, Apr 23, Oct 23",
     },
     {
       name: "MBA - Master of Business Administration - 90",
       careId: "121_FI",
       //"careIdCs" : '121'
       careIdCs: "10008379",
-      intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22, Jan 23, Apr 23, Jul 23",
+      intake: "Jan 23, Apr 23, Jul 23",
     },
     {
       name: "MBA - Specialisation Big Data Management - 90",
       careId: "121_FI_BDM",
       //"careIdCs" : '121_BDM'
       careIdCs: "10008379_BDM",
-      intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22, Jan 23, Apr 23, Jul 23",
+      intake: "Jan 23, Apr 23, Jul 23",
     },
     {
       name: "MBA - Specialisation International Marketing - 90",
       careId: "121_FI_IM",
       //"careIdCs" : '121_IM'
       careIdCs: "10008379_IM",
-      intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22, Jan 23, Apr 23, Jul 23",
+      intake: "Jan 23, Apr 23, Jul 23",
     },
     {
       name: "MBA - Specialisation Finance & Accounting - 90",
       careId: "121_FI_FA",
       //"careIdCs" : '121_FA'
       careIdCs: "10008379_FA",
-      intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22, Jan 23, Apr 23, Jul 23",
+      intake: "Jan 23, Apr 23, Jul 23",
     },
     {
       name: "MBA - Specialisation Engineering Management - 90",
       careId: "121_FI_EM",
       //"careIdCs" : '121_EM'
       careIdCs: "10008379_EM",
-      intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22, Jan 23, Apr 23, Jul 23",
+      intake: "Jan 23, Apr 23, Jul 23",
     },
     {
       name: "MBA - Specialisation IT Management - 90",
       careId: "121_FI_ITM",
       //"careIdCs" : '121_ITM'
       careIdCs: "10008379_ITM",
-      intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22, Jan 23, Apr 23, Jul 23",
+      intake: "Jan 23, Apr 23, Jul 23",
     },
     {
       name: "MBA - Specialisation Health Care Management - 90",
       careId: "121_FI_HCM",
       careIdCs: "10008379_HCM",
-      intake: "Apr 22, Jul 22, Oct 22, Jan 23, Apr 23",
+      intake: "Jan 23, Apr 23",
     },
     {
       name: "MBA - Specialisation Human Resource Management - 90",
       careId: "121_FI_HRM",
       careIdCs: "10008379_HRM",
-      intake: "Apr 22, Jul 22, Oct 22, Jan 23, Apr 23",
+      intake: "Jan 23, Apr 23",
     },
     {
       name: "MBA - Specialisation Supply Chain Management - 90",
       careId: "121_FI_SCM",
       careIdCs: "10008379_SCM",
-      intake: "Apr 22, Jul 22, Oct 22, Jan 23, Apr 23",
+      intake: "Jan 23, Apr 23",
     },
     {
       name: "MBA - Specialisation Innovation & Entrepreneurship - 90",
       careId: "121_FI_IE",
       careIdCs: "10008379_IE",
-      intake: "Apr 22, Jul 22, Oct 22, Jan 23, Apr 23",
+      intake: "Jan 23, Apr 23",
     },
     {
       name: "MBA - Specialisation Artificial Intelligence - 90",
       careId: "121_FI_AI",
       careIdCs: "10008379_AI",
-      intake: "Apr 22, Jul 22, Oct 22, Jan 23, Apr 23",
+      intake: "Jan 23, Apr 23",
     },
     {
       name: "MBA - Specialisation E-Sports Management - 90",
       careId: "121_FI_ESM",
       careIdCs: "10008379_ESM",
-      intake: "Apr 22, Jul 22, Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
+      intake: "Jan 23, Apr 23, Jul 23, Oct 23",
     },
     {
       name: "MBA - Specialisation Salesforce - 90",
       careId: "121_FI_SF",
       careIdCs: "10008379_SF",
-      intake: "Apr 22, Jul 22, Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
+      intake: "Jan 23, Apr 23, Jul 23, Oct 23",
     },
     {
       name: "B.Sc. Applied Artificial Intelligence - 180",
       careId: "10008073_FI_AI",
       careIdCs: "10008523_CS_AAI",
-      intake: "Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
+      intake: "Jan 23, Apr 23, Jul 23, Oct 23",
       //needs to be there
     },
     {
@@ -1029,7 +1029,7 @@ function removeBadHonnefBasedIntake(curIntake) {
       careId: "10008001_FI",
       //"careIdCs" : '10008001_CS'
       careIdCs: "10008368",
-      intake: "Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
+      intake: "Jan 23, Apr 23, Jul 23, Oct 23",
     },
     {
       name: "B.Eng. Robotics - 180",
@@ -1046,14 +1046,14 @@ function removeBadHonnefBasedIntake(curIntake) {
       careId: "10008000_FI",
       //"careIdCs" : '10008000_CS'
       careIdCs: "10008370",
-      intake: "Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
+      intake: "Jan 23, Apr 23, Jul 23, Oct 23",
     },
     {
       name: "B.A. International Management - 180",
       careId: "10008002_FI",
       //"careIdCs" : '10008002_CS'
       careIdCs: "10008371",
-      intake: "Jul 22, Oct 22, Jan 23, Apr 23, Jul 23, Oct 23",
+      intake: "Jan 23, Apr 23, Jul 23, Oct 23",
     },
     {
       name: "B.A. Aviation Management - 180",
@@ -1071,7 +1071,7 @@ function removeBadHonnefBasedIntake(curIntake) {
       name: "M.A. Marketing Management - 60",
       careId: "10007977_FI",
       careIdCs: "10008540_CS_MM",
-      intake: "Oct 22, Jan 23, Apr 23",
+      intake: "Jan 23, Apr 23",
       studyLocation: "OnlyBerlin",
     },
     {
@@ -1105,7 +1105,7 @@ function removeBadHonnefBasedIntake(curIntake) {
       name: "B.Sc. Computer Science - 180",
       careId: "10007944_FI",
       careIdCs: "10008369",
-      intake: "Oct 22, Apr 23, Oct 23",
+      intake: "Apr 23, Oct 23",
     },
     {
       name: "B.Sc. Software Development - 180",
@@ -1119,7 +1119,7 @@ function removeBadHonnefBasedIntake(curIntake) {
       st_careId: "70",
       //"careIdCs" : '10008044_CS'
       careIdCs: "10008376",
-      intake: "Jul 22, Oct 22, Jan 23, Apr 23",
+      intake: "Jan 23, Apr 23",
     },
     {
       name: "M.A. International Management - 120",
@@ -1127,7 +1127,7 @@ function removeBadHonnefBasedIntake(curIntake) {
       st_careId: "70",
       //"careIdCs" : '10008045_CS'
       careIdCs: "10008375",
-      intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22",
+      intake: "Jan 23, Apr 23, Jul 23, Oct 23",
     },
     {
       name: "M.A. International Management - Specialisation AI & Robotics - 120",
@@ -1135,7 +1135,7 @@ function removeBadHonnefBasedIntake(curIntake) {
       st_careId: "70",
       //"careIdCs" : '10008045_CS_AR'
       careIdCs: "10008375_AR",
-      intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22",
+      intake: "Jan 23, Apr 23, Jul 23, Oct 23",
     },
     {
       name: "M.A. International Management - Specialisation Big Data Management - 120",
@@ -1143,7 +1143,7 @@ function removeBadHonnefBasedIntake(curIntake) {
       st_careId: "70",
       //"careIdCs" : '10008045_CS_BDM'
       careIdCs: "10008375_BDM",
-      intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22",
+      intake: "Jan 23, Apr 23, Jul 23, Oct 23",
     },
     {
       name: "M.A. International Management - Specialisation Engineering Management - 120",
@@ -1151,7 +1151,7 @@ function removeBadHonnefBasedIntake(curIntake) {
       st_careId: "70",
       //"careIdCs" : '10008045_CS_EM'
       careIdCs: "10008375_EM",
-      intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22",
+      intake: "Jan 23, Apr 23, Jul 23, Oct 23",
     },
     {
       name: "M.A. International Management - Specialisation IT Management - 120",
@@ -1159,7 +1159,7 @@ function removeBadHonnefBasedIntake(curIntake) {
       st_careId: "70",
       //"careIdCs" : '10008045_CS_ITM'
       careIdCs: "10008375_ITM",
-      intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22",
+      intake: "Jan 23, Apr 23, Jul 23, Oct 23",
     },
     {
       name: "M.A. International Management - Specialisation International Marketing - 120",
@@ -1167,7 +1167,7 @@ function removeBadHonnefBasedIntake(curIntake) {
       st_careId: "70",
       //"careIdCs" : '10007958_CS_IM'
       careIdCs: "10008375_IM",
-      intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22",
+      intake: "Jan 23, Apr 23, Jul 23, Oct 23",
       intake2: "Jan 22, Apr 22, Jul 22, Oct 22",
     },
     {
@@ -1176,7 +1176,7 @@ function removeBadHonnefBasedIntake(curIntake) {
       st_careId: "70",
       //"careIdCs" : '10008045_CS_FA'
       careIdCs: "10008375_FA",
-      intake: "Oct 21, Jan 22, Apr 22, Jul 22, Oct 22",
+      intake: "Jan 23, Apr 23, Jul 23, Oct 23",
     },
     {
       name: "M.Eng. Engineering Management - 60",
@@ -1184,7 +1184,7 @@ function removeBadHonnefBasedIntake(curIntake) {
       st_careId: "70",
       //"careIdCs" : '10008075_CS'
       careIdCs: "10008374",
-      intake: "Oct 22, Apr 22, Oct 22, Apr 23, Oct 23",
+      intake: "Apr 23, Oct 23",
       studyLocation: "OnlyBerlin"
     },
   ];
